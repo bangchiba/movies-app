@@ -1,7 +1,7 @@
 {
   "headers": [
     {
-      "source": "http://www.omdbapi.com/(.*)",
+      "source": "http://www.omdbapi.com/",
       "headers": [
         {
           "key": "access-control-allow-origin",
