@@ -1,7 +1,7 @@
 import { createReducer, createAction } from '@reduxjs/toolkit';
 import { InitialStateProps } from './type';
 
-export const initialState: InitialStateProps = { search: ''};
+export const initialState: InitialStateProps = { search: 'Batman'};
 
 const SEARCH = 'SEARCH';
 

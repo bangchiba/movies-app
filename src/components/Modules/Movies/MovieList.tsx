@@ -4,20 +4,21 @@ import { MoviesProps } from './types';
 
 interface MovieListProps {
   movies: MoviesProps;
+	onClickPoster: (index: number) => void;
 }
 
-const MovieList = ({ movies }: MovieListProps) => {
+const MovieList = ({ movies, onClickPoster }: MovieListProps) => {
+	
   return (
     <>
       {movies.map((movie, index) => (
-        <div className="mt-8" key={index}>
-          {/* <a href="#"> */}
+        <div key={index}>
           <img
             src={`${movie.Poster}`}
             alt="movie"
             className="hover:opacity-75 transition ease-in-out duration-150"
+						onClick={() => onClickPoster(index)}
           />
-          {/* </a> */}
           <div className="mt-2">
             <Link
               to={`/detail/${movie.imdbID}`}

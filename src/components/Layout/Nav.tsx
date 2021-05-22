@@ -2,17 +2,23 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { getSearch, setSearch } from '../../store/searchDuck';
-import { Store } from '../../store/type';
+import { setSearch } from '../../store/searchDuck';
 
 const Nav = (props: any) => {
   const { setSearchAction } = props;
   const [value, setValue] = useState('Batman');
+
+  const onKeyPress = (e: any) => {
+    if (e.key === 'Enter') {
+      setSearchAction(value);
+    }
+
+  }
   
   return (
     <nav className="border-b border-gray-800">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between px-4 py-6">
-        <ul className="flex flex-col md:flex-row items-center">
+        <ul className="flex flex-col md:flex-row items-center w-full">
           <li>
             <Link to="/">
               <svg className="w-32" viewBox="0 0 96 24" fill="none">
@@ -23,9 +29,8 @@ const Nav = (props: any) => {
               </svg>
             </Link>
           </li>
-          <li className="md:ml-16 mt-3 md:mt-0 text-black">
-            <input type="text" name="name" value={value} onChange={(e) => setValue(e.target.value)} />
-            <input type="submit" value="Submit" onClick={() => setSearchAction(value)} />
+          <li className="md:ml-16 mt-3 md:mt-0 text-black w-full">
+            <input type="text" name="name" className="border py-2 px-3 bg-grey-800 rounded w-6/12" value={value} onChange={(e) => setValue(e.target.value)} onKeyPress={(e) => onKeyPress(e)} />
           </li>
         </ul>
       </div>

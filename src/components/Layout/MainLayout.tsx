@@ -10,7 +10,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
   return (
     <div className="font-sans bg-gray-900 text-white">
       <Nav />
-      <div className="container sm:mx-auto px-4 pt-16">{children}</div>
+        <div className="container sm:mx-auto px-4 pt-16">{children}</div>
       <Footer />
     </div>
   );
