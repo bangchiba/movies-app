@@ -30,7 +30,7 @@ const Movies = (props: any) => {
     try {
       setIsLoading(true);
       const { data } = await axios.get(
-        `http://www.omdbapi.com/?apikey=3207ad8&s=${search}&page=${page}`
+        `http://www.omdbapi.com/?apikey=faf7e5bb&s=${search}&page=${page}`
       );
       
       if (data.Search) {

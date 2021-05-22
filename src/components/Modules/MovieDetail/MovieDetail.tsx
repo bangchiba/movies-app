@@ -14,7 +14,7 @@ const MovieDetail = () => {
     try {
       setIsLoading(true);
       const { data } = await axios.get(
-        `http://www.omdbapi.com/?apikey=3207ad8&i=${imdbID}`
+        `http://www.omdbapi.com/?apikey=faf7e5bb&i=${imdbID}`
       );
       setMovie(data);
     } catch (error) {
